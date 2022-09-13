@@ -8,7 +8,7 @@ public class AssignmentTwoMain {
     private String course;
     private String[] students;
     private double[] grades;
-    private Scanner scanner= new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         AssignmentTwoMain assignmentTwoMain = new AssignmentTwoMain();
@@ -36,21 +36,21 @@ public class AssignmentTwoMain {
 
     private void askStudentNamesAndStoreInStudents() {
         for (int i = 0; i < this.students.length; i++){
-            System.out.print(String.format("Enter name of student %s :", (i+1)));
+            System.out.printf("Enter name of student %s :", (i+1));
             this.students[i] = scanner.next();
         }
     }
 
     private void askStudentCourseGradesAndStoreInGrades() {
         for (int i = 0; i < this.grades.length; i++){
-            System.out.print(String.format("Enter the grade of %s:", this.students[i]));
+            System.out.printf("Enter the grade of %s:", this.students[i]);
             this.grades[i] = scanner.nextInt();
         }
     }
 
     private void calculateAndShowAverageGrade() {
         double average = Arrays.stream(this.grades).sum() / this.grades.length;
-        System.out.println(String.format("Average grade: %s", average));
+        System.out.printf("Average grade: %s %n", average);
     }
 
     private void findAndShowMaximumGrade() {
@@ -61,12 +61,12 @@ public class AssignmentTwoMain {
                 student = this.students[i];
             }
         }
-        System.out.println(String.format("Student %s has maximum grade: %s", student, maxGrade));
+        System.out.printf("Student %s has maximum grade: %s %n", student, maxGrade);
     }
 
     private void showGradesStudentAndCourse() {
         for(int i = 0; i < grades.length; i++) {
-            System.out.println(String.format("Grade for student %s (course %s): %s", this.students[i], this.course, this.grades[i]));
+            System.out.printf("Grade for student %s (course %s): %s %n", this.students[i], this.course, this.grades[i]);
         }
     }
 }
