@@ -1,14 +1,16 @@
 package models;
 
+import enums.AccessLevelType;
+
 import java.util.Date;
 
-public abstract class User {
+public abstract class UserModel {
     private String firstName;
     private String lastName;
     private Date birthDate;
     private int id;
     private AccessLevelType accessLevel;
-
+    private String password;
     public String getFirstName() {
         return firstName;
     }
@@ -48,4 +50,16 @@ public abstract class User {
     public void setAccessLevel(AccessLevelType accessLevel) {
         this.accessLevel = accessLevel;
     }
+
+    public String getUsername() {
+        return this.firstName + this.id;
+    }
+
+    public boolean isLoginValid(String password) {
+        return password.equals(this.password);
+    }
+    /*
+    public int getAge() {
+    }
+     */
 }

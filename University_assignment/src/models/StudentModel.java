@@ -1,6 +1,8 @@
 package models;
 
-public class Student extends User {
+import enums.AccessLevelType;
+
+public class StudentModel extends UserModel {
     private String group;
 
     public String getGroup() {
@@ -11,7 +13,7 @@ public class Student extends User {
         this.group = group;
     }
 
-    public Student() {
+    public StudentModel() {
         this.setAccessLevel(AccessLevelType.BASIC);
     }
 }
