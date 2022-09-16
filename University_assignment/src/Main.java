@@ -1,17 +1,10 @@
-import data.Database;
-import models.StudentModel;
-import models.UserModel;
-
-import java.util.List;
+import ui.LoginUI;
 
 public class Main {
     public static void main(String[] args) {
-        /*Database database = new Database();
-        StudentModel student = new StudentModel();
-        student.setGroup("inf2a");
-        student.setId(1);
-        database.addUserToUsers(student);
-
+        LoginUI loginUI = new LoginUI();
+        loginUI.start();
+        /*
         List<UserModel> users = database.getAllUsers();
 
         for (UserModel user: users) {

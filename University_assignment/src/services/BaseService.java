@@ -1,18 +1,22 @@
 package services;
 
 import data.Database;
-import models.UserModel;
+import models.User;
 
 import java.util.List;
 
 abstract class BaseService {
     private Database database = Database.getInstance();
 
-    protected void addUserToUsers(UserModel user) {
+    protected void addUserToUsers(User user) {
         this.database.addUserToUsers(user);
     }
 
-    protected List<UserModel> getAllUsers() {
+    protected List<User> getAllUsers() {
         return this.database.getAllUsers();
+    }
+
+    protected User getUserByUsername(String username) {
+        return this.database.getUserByUsername(username);
     }
 }
